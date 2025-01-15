@@ -140,7 +140,7 @@ class TextToEmbeddingModelPipeline(torch.nn.Module):
                 encoder, device=device, dtype=dtype, progress=False
             )
         if isinstance(tokenizer, str):
-            tokenizer = load_sonar_tokenizer(tokenizer, progress=False)
+            tokenizer = load_sonar_tokenizer(tokenizer)
 
         self.tokenizer = tokenizer
         self.model = encoder.eval()  # type: ignore
